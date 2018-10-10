@@ -1,27 +1,35 @@
 # TODO
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+Este es el proyecto de TODO list hecho en angular con la técnica de XP llamada TDD
 
-## Development server
+## Correr la aplicación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+En el terminal ejecutamos `ng serve` para ejecutar el servidor de desarrollo. Nuestra aplicación queda accesible desde la ruta `http://localhost:4200/`. Esta aplicación se auto refrescara.
 
-## Code scaffolding
+## Primer paso, creemos el componente board
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Corramos  `ng generate component board` para generar el componente donde estará alojado nuestro tablero de tareas.
 
-## Build
+## Configurando el routing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Para configurar el componente de board como una nueva ruta en la aplicación, vamos al archivo `app-routing.module.ts` y allí encontramos una linea de código similar a esta `const routes: Routes = [];` modifiquemosla de tal manera que quede:
 
-## Running unit tests
+```typescript
+    const routes: Routes = [
+        {
+            path: 'board',
+            component: BoardComponent
+        }
+    ];
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+para que esta configuración funcione correctamente es necesario agregar el import `import { BoardComponent } from './board/board.component';`
 
-## Running end-to-end tests
+## Correr las pruebas
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Hasta el momento no hemos escrito una linea de código pero igual las pruebas que están por defecto deben estar funcionando corriendo el comando `ng test`
 
-## Further help
+## Paso 1
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+https://github.com/luisfelipediaz/TODO/tree/Step1
+
