@@ -33,4 +33,17 @@ describe('BoardComponent', () => {
     expect(WIP.query(By.css('h2')).nativeElement.textContent).toBe('WIP');
     expect(DONE.query(By.css('h2')).nativeElement.textContent).toBe('DONE');
   });
+
+  it('debería pintar 5 tareas en la columnas de TODO', () => {
+    const tareas = fixture.debugElement.queryAll(By.css('div[name="TODO"] li'));
+
+    const [task1, task2, task3, task4, task5] = tareas;
+
+    expect(tareas.length).toBe(5);
+    expect(task1.nativeElement.textContent).toBe('Task 1');
+    expect(task2.nativeElement.textContent).toBe('Task 2');
+    expect(task3.nativeElement.textContent).toBe('Task 3');
+    expect(task4.nativeElement.textContent).toBe('Task 4');
+    expect(task5.nativeElement.textContent).toBe('Task 5');
+  });
 });

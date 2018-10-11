@@ -1,8 +1,11 @@
 <div class="row justify-content-md-center">
   <div class="col-sm-10 col-12">
     <div class="row board">
-      <div class="col-4 text-center">
+      <div class="col-4 text-center" name="TODO">
         <h2>TODO</h2>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let task of tasks">{{task.name}}</li>
+        </ul>
       </div>
       <div class="col-4 text-center">
         <h2>WIP</h2>
